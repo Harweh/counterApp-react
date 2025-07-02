@@ -27,13 +27,17 @@ const App = () => {
   // dispatch funct is same as reducer function &
   // state is the same as initialState 
 
+  useEffect(()=>{
+    setCounter((Number(localStorage.getItem('count'))))
+  }, [])
+
 
 
   return (
     <div style={{height:"100vh", background:"black", color:"white"}} className='container'>
       <h1>Counter</h1>
        <div className="counter-section">
-          <button onClick={() =>dispatch('inc')}>+</button>
+          <button onClick={() => dispatch('inc')}>+</button>
           <h3>{state.count}</h3>
            <button onClick={() =>dispatch('dec')}>-</button>
            <br />
